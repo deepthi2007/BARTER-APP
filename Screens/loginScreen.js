@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, StyleSheet, Text, Image, TouchableOpacity,TextInput, Alert } from 'react-native';
+import { View, StyleSheet, Text, TouchableOpacity,TextInput, Alert , Image } from 'react-native';
 import db from '../config';
 import firebase from 'firebase';
 
@@ -49,6 +49,10 @@ export default class LoginScreen extends Component {
       <View style={styles.container}>
         <View style={styles.profileContainer}>
           
+        <Image
+          style={styles.tinyLogo}
+          source={require('../assets/barter1.jpg')}
+        />
           <Text style={styles.title}>Barter App</Text>
         </View>
         <View style={styles.buttonContainer}>
@@ -126,7 +130,7 @@ const styles = StyleSheet.create({
     justifyContent:'center',
     alignSelf:"center",
     borderRadius:25,
-    backgroundColor:"#ff9800",
+    backgroundColor:"#1400f5",
     shadowColor: "#000",
     shadowOffset: {
        width: 0,
@@ -146,5 +150,9 @@ const styles = StyleSheet.create({
   buttonContainer:{
     flex:1,
     alignItems:'center',
-  }
+  },
+  tinyLogo: {
+    width: 200,
+    height: 200,
+  },
 })

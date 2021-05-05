@@ -137,7 +137,7 @@ export default class LoginScreen extends Component {
 
   userSignUp = (emailId, password,confirmPassword) =>{
     if(password !== confirmPassword){
-        return Alert.alert("password doesn't match\nCheck your password.")
+        return Alert.alert("password doesn't match ,Check your password.")
     }else{
       firebase.auth().createUserWithEmailAndPassword(emailId, password)
       .then(()=>{
@@ -168,7 +168,7 @@ export default class LoginScreen extends Component {
   userLogin = (email,password)=>{
     firebase.auth().signInWithEmailAndPassword(email, password)
     .then((response)=>{
-      return alert("User loged in  Successfully")
+      this.props.navigation.navigate('Home')
     })
     .catch(function(error) {
       // Handle Errors here.
@@ -252,16 +252,16 @@ const styles = StyleSheet.create({
   },
   title :{
     fontSize:65,
-    fontWeight:'300',
+    fontWeight:'bold',
     paddingBottom:30,
-    color : '#ff3d00',
+    color : '#0050ff',
     textAlignVertical:"center"
   },
   loginBox:{
     width: 300,
     height: 40,
     borderBottomWidth: 1.5,
-    borderColor : '#ff8a65',
+    borderColor : '#00fffa',
     fontSize: 20,
     margin:10,
     paddingLeft:10
@@ -306,7 +306,7 @@ const styles = StyleSheet.create({
     justifyContent:'center',
     alignSelf:'center',
     fontSize:30,
-    color:'#ff5722',
+    color:'#0050ff',
     margin:50
   },
   modalContainer:{
@@ -324,7 +324,7 @@ const styles = StyleSheet.create({
     width:"75%",
     height:35,
     alignSelf:'center',
-    borderColor:'#ffab91',
+    borderColor:'#0050ff',
     borderRadius:10,
     borderWidth:1,
     marginTop:20,
@@ -340,7 +340,7 @@ const styles = StyleSheet.create({
     marginTop:30
   },
   registerButtonText:{
-    color:'#ff5722',
+    color:'#0050ff',
     fontSize:15,
     fontWeight:'bold'
   },
@@ -350,5 +350,6 @@ const styles = StyleSheet.create({
     justifyContent:'center',
     alignItems:'center',
     marginTop:5,
+    color:"#0050ff"
   },
 })

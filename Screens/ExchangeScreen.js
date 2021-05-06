@@ -2,6 +2,7 @@ import * as React from 'react'
 import {Text , TextInput , TouchableOpacity , View , StyleSheet} from 'react-native'
 import firebase from 'firebase'
 import db from '../Config'
+import AppHeader from '../components/AppHeader'
 
 export default class ExchangeScreen extends React.Component{
 constructor(){
@@ -34,6 +35,7 @@ alert('The new Item is Added')
     render(){
         return(
             <View>
+                <AppHeader header="Exchange"/>
                 <TextInput
                 style={styles.input}
                 placeholder="Name of the Item"
@@ -62,7 +64,7 @@ const styles = StyleSheet.create({
         width:"80%",
         height:55,
         alignSelf:'center',
-        borderColor:'#ffab91',
+        borderColor:'#00fffa',
         borderRadius:10,
         borderWidth:1,
         marginTop:20,
@@ -74,7 +76,7 @@ const styles = StyleSheet.create({
    justifyContent:'center',
    alignSelf:'center',
    borderRadius:25,
-   backgroundColor:"#ff9800",
+   backgroundColor:"#1400f5",
    shadowColor: "#000",
    shadowOffset: {
       width: 0,

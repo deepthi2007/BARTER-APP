@@ -2,7 +2,7 @@ import React from 'react';
 import { View } from 'react-native';
 import LoginScreen from './Screens/loginScreen';
 import {createSwitchNavigator,createAppContainer} from 'react-navigation'
-import TabNavigator from './components/TabNavigator';
+import DrawerNavigator from './components/DrawerNavigator';
 
 export default class App extends React.Component {
   render(){
@@ -14,7 +14,7 @@ export default class App extends React.Component {
 
 const SwitchNavigator = createSwitchNavigator({
   Login:{screen:LoginScreen},
-  TabNavigator:{screen:TabNavigator}
+  DraqwerNavigator:{screen:DrawerNavigator}
   })
   
   const AppContainer = createAppContainer(SwitchNavigator)

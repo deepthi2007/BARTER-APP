@@ -2,9 +2,11 @@ import * as React from 'react'
 import {createDrawerNavigator} from 'react-navigation-drawer'
 import TabNavigator from './TabNavigator'
 import CustomSideBar from './customSideBar'
+import UpdateProfileScreen from '../Screens/updateProfileScreen'
 
  const DrawerNavigator = createDrawerNavigator({
-    Home:{screen:TabNavigator}
+    Home:{screen:TabNavigator},
+    UpdateYourProfile:{screen:UpdateProfileScreen}
 }, {
     contentComponent:CustomSideBar
 }, {

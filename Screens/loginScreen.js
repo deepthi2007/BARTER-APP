@@ -154,7 +154,8 @@ export default class LoginScreen extends Component {
              [
                {text: 'OK', onPress: () => this.setState({"isModalVisible" : false})},
              ]
-         );
+         )
+          alert("User Added Successfully")
       })
       .catch((error)=> {
         // Handle Errors here.
@@ -196,6 +197,7 @@ export default class LoginScreen extends Component {
           source={require('../assets/barter1.jpg')}
         />
           <Text style={styles.title}>Barter App</Text>
+          <Text style={styles.buttonText}>Login With Your UserId and Password</Text>
         </View>
         <View style={styles.buttonContainer}>
           <TextInput

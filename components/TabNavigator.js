@@ -1,10 +1,10 @@
 import {createBottomTabNavigator} from 'react-navigation-tabs'
-import ExchangeScreen from '../Screens/ExchangeScreen'
 import HomeScreen from '../Screens/HomeScreen'
+import StackNavigator from './StackNavigator'
 
 const TabNavigator = createBottomTabNavigator({
     Home:{screen:HomeScreen},
-    Exchange:{screen:ExchangeScreen}
+    Exchange:{screen:StackNavigator}
 })
 
 export default TabNavigator

@@ -1,7 +1,9 @@
+
+
 import React, { Component } from 'react';
 import { View, StyleSheet, Text, FlatList, TouchableOpacity } from 'react-native';
 import { List,Divider } from 'react-native-paper'
-import db from '../config'
+import db from '../Config'
 import AppHeader from '../components/AppHeader'
 
 export default class HomeScreen extends Component{
@@ -27,19 +29,27 @@ export default class HomeScreen extends Component{
 
   keyExtractor = (item, index) => {
       index.toString();
-      console.log(item)
                 }
 
   renderItem = ( {item, i} ) =>{
 
     return (
         <View>
+          <View>
       <List.Item
         key={i}
         title={"Item : "+item.itemName}
         description={"Reason : "+item.reason}
          />
+      <TouchableOpacity 
+      style={styles.button}
+      onPress={()=>{this.props.navigation.navigate('ViewItem',{itemDetails:item})}}>
+        <Text style={styles.buttonText}>View</Text>
+      </TouchableOpacity>
+         </View>
+         <View>
       <Divider style={{color:"blue"}}/>
+      </View>
       </View>
     )
   }
@@ -80,16 +90,27 @@ export default class HomeScreen extends Component{
 
 const styles = StyleSheet.create({
   button:{
-    width:100,
-    height:30,
+    width:300,
+    height:50,
     justifyContent:'center',
-    alignItems:'center',
-    backgroundColor:"#ff5722",
+    alignSelf:"center",
+    borderRadius:25,
+    backgroundColor:"#1400f5",
     shadowColor: "#000",
     shadowOffset: {
        width: 0,
-       height: 8
-     }
+       height: 8,
+    },
+    shadowOpacity: 0.30,
+    shadowRadius: 10.32,
+    elevation: 16,
+  },
+  buttonText:{
+    color:'#ffff',
+    fontWeight:'200',
+    fontSize:20,
+    textAlign:"center",
+    textAlignVertical:"center"
   }
 })
 
